@@ -1,5 +1,5 @@
-# homework
-가나다라
-마바사
-아자차카
-타파하
+# JavaScript
+
+- JavaScript Basic
+
+요약요약요약
