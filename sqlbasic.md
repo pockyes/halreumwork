@@ -74,3 +74,7 @@
 ### BEGIN ~ END  블록
 
 
+### ALTER TABLE
+
+- ex) 
+
