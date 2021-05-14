@@ -60,9 +60,9 @@ x에 값을 대입한 후 a에 1을 더한다. --> x의 값은 1이 된다.
 - window 오브젝트란 브라우저 창에 해당하는 최상위 오브젝트로, Window 프로퍼티로 이용할 수 있다. (창, 메뉴 표시줄, 도구 상자, 주소 표시줄, 스크롤바, 상태 표시줄로 구성되어 있음)
 ##### 프로퍼티와 메서드
 - 프로퍼티  / 기능
-=> documents / document 오브젝트를 참조한다
-=> history / history 오브젝트를 참조한다
-=> location / location 오브젝트를 참조한다
-=> closed / 창이 닫혀있는지를 참조한다
+##### => documents / document 오브젝트를 참조한다
+##### => history / history 오브젝트를 참조한다
+##### => location / location 오브젝트를 참조한다
+##### => closed / 창이 닫혀있는지를 참조한다
 
 
