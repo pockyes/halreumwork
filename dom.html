@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>캐릭터 설명</title>
+    <style type="text/css">
+    #comment {
+      width: 300px;
+      height: 100px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    </style>
+
+    <script type="text/javascript">
+    function changeText() {
+      var e = document.getElementById("ehon");
+      if(e != null) e.innerHTML = "javaScript가 보이는 그림책";
+    
+    } 
+    function changeColor() {
+      var e = document.getElementById("ehon");
+      if(e != null) e.style.color = "red";
+      
+    }
+    function proc() {
+      var inp = document.getElementsByTagName("input");
+      var e = document.getElementById("num");
+      if( e != null) e.innerHTML = inp.length;
+      console.log('length >> ', e.innerHTML);
+    }
+    </script>
+  </head>
+
+  <body>
+    <form action="send.cgi" method="GET">
+      <span id="ehon"> Java가 보이는 그림책</span>에 대한 의견이나 감상을 들려주세요
+      <p>
+        <div>
+          이름 : <input name="yourname">
+        </div>
+        <div>
+          <textarea id="comment"></textarea>
+        </div>
+        <input type="submit" value="보내기">
+      </p>
+    </form>
+    <div>
+      <button onclick="changeText()">도서명 변경</button>
+      <button onclick="changeColor()">색상 변경</button>
+      input 요소 수는 <span id="num">?</span>개<br>
+    </div>
+  </body>
+
+</html>

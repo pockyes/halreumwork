@@ -35,3 +35,15 @@ let str = 'Hello';
 str.test = 5;
 
 console.log('str >> ', str.test);
+
+
+
+
+
+function unique(arr){
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    function init() {
+      document.form1.txtUrl.value = "http://www.naver.com/";
+      document.form1.txtWidth.value = "600";
+      document.form1.txtHeight.value = "480";
+      document.form1.btnClose.disabled = true;
+    }
+    
+    function openWindow() {
+      var errMsg = errorCheck();
+      if (errMsg != "") {
+        alert(errMsg + "가 입력되지 않았습니다");
+        return;
+      }
+   
+      var url = document.form1.txtUrl.value;
+      var width = document.form1.txtWidth.value;
+      var height = document.form1.txtHeight.value;
+      if(confirm("새 창에서 열겠습니까?")) {
+        console.log('2');
+      mywin = window.open(url, "", "width =" + width + ", height =" + height);
+      document.form1.btnClose.disabled = false;
+    } 
+    console.log('3');
+  }
+
+  function closeWindow() {
+    if(confirm("창을 닫으시겠습니까?") == true) {
+      mywin.close();
+      document.form1.btnClose.disabled = true;
+    } else {
+      return;
+    }
+  }
+
+  function errorCheck() {
+    var errMsg = "";
+
+    for(i=0; i < document.form1.length; i++) {
+      if(document.form1.elements[i].type == "text"
+      && document.form1.elements[i].value == "") {
+        switch(document.form1.elements[i].name) {
+          case "txtUrl": 
+          errMsg += "[URL]";
+          break;
+          case "txtWidth":
+            errMsg += "[Width]";
+            break;
+            case "txtHeight":
+            errMsg += "[Height]";  
+            break;
+
+        }
+      }
+    }
+    return errMsg;
+  }
+    </script>
+  </head>
+<body onload="init()">
+<form name="form1">
+  <p>
+    <input type="button" name="btnOpen" value="Open" onClick="openWindow()">
+    <input type="button" name="btnClose" value="Close" onClick="closeWindow()">
+  </p>
+  <p> URL : <input type="text" name="txtUrl"></p>
+  <p> Width : <input type="text" name="txtWidth"></p>
+  <p> Height : <input type="text" name="txtHeight"></p>
+</form>
+</body>
+
+</html>
