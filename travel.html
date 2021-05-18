@@ -4,7 +4,12 @@
     <script type="text/javascript">
     function checkTravel() {
       str = "이름 : " + document.form1.txtName.value + "\n";
-      
+
+      index = document.form1.startMonth.selectedIndex;
+      str += "출발월 : " + document.form1.startMonth.options[index].text + "\n";
+
+      index = document.form1.moneyPlan.selectedIndex;
+      str += "예산 : " + document.form1.moneyPlan.options[index].text + "\n";
 
       // for(i=0; i < document.form1.length; i++) {
       //   if(document.form1.elements[i].value == "") {
@@ -22,19 +27,19 @@
   <body>
     <form name="form1">
     이름 : <input type="text" name="txtName"><br><br>
-    출발월 : <select>
+    출발월 : <select name="startMonth">
       <option value="01" selected>1월</option>
-      <option value="02" selected>2월</option>
-      <option value="03" selected>3월</option>
-      <option value="04" selected>4월</option>
-      <option value="05" selected>5월</option>
-      <option value="06" selected>6월</option>
-      <option value="07" selected>7월</option>
-      <option value="08" selected>8월</option>
-      <option value="09" selected>9월</option>
-      <option value="10" selected>10월</option>
-      <option value="11" selected>11월</option>
-      <option value="12" selected>12월</option>
+      <option value="02" >2월</option>
+      <option value="03" >3월</option>
+      <option value="04" >4월</option>
+      <option value="05" >5월</option>
+      <option value="06" >6월</option>
+      <option value="07" >7월</option>
+      <option value="08" >8월</option>
+      <option value="09" >9월</option>
+      <option value="10" >10월</option>
+      <option value="11" >11월</option>
+      <option value="12" >12월</option>
     </select><br><br>
     여행지 : <br><input type="radio" name="radio1" value="1" checked="checked">유럽<br>
     <input type="radio" name="radio2" value="2">아시아<br>
@@ -48,7 +53,7 @@
     </select><br><br>
 
     <input type="button" value="확인" onclick="checkTravel()">
-    <input type="button" value="다시 작성" onclick="">
+    <input type="reset" value="다시 작성" onclick="">
   </form>
 
   </body>
