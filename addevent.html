@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    function eventFunc(event) {
+      event = event || window.event;
+      alert("이벤트 타입 : " + event.type);
+      return true;
+    }
+    function addEventHdr() {
+      var e = document.getElementById("btn");
+      if(e == null) return;
+      if(window.addEventListener) {
+        e.addEventListener("click", eventFunc, false);
+      } else {
+        e.attachEvent("onClick", eventFunc);
+      }
+    }
+    function sendEventProc() {
+      var e = document.getElementById("btn");
+      if(e == null) return;
+      if(document.createEvent) {
+        var evt = document.createEvent("MouseEvents");
+        evt.initEvent("click", false, true);
+        e.dispatchEvent(evt);
+      } else {
+        var evt = document.createEventObject();
+        e.fireEvent("onClick", evt);
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <p>
+      <button id="btn">버튼</button>
+    </p>
+    <p>
+      <button onclick="addEventHdr()">이벤트 핸들러 추가</button>
+      <button onclick="sendEventProc()">이벤트 전송</button>
+    </p>
+  </body>
+</html>
