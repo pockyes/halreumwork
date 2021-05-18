@@ -3,6 +3,9 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <script type="text/javascript">
     function checkTravel() {
+      str = "이름 : " + document.form1.txtName.value + "\n";
+      
+
       for(i=0; i < document.form1.length; i++) {
         if(document.form1.elements[i].value == "") {
           alert("확인");
@@ -16,7 +19,7 @@
 
   <body>
     <form name="form1">
-    이름 : <input type="text"><br><br>
+    이름 : <input type="text" name="txtName"><br><br>
     출발월 : <select>
       <option value="01" selected>1월</option>
       <option value="02" selected>2월</option>
