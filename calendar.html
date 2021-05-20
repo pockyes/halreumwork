@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <meta charset="UTF-8">
+<head>
+<title>calendar</title>
+<script type='text/javascript'>
+  function getNHLastDay(year, month)
+  {
+     var arrLastMonth = new Array (31,(year % 4 == 0)? 28 : 29,31,30,31,30,31,31,30,31,30,31);
+     return arrLastMonth[month];
+  }
+
+  function drawNHCalendar(iddiv)
+  {
+     var i, j, x, y;
+     var arrWeek = new Array ('일', '월', '화', '수', '목', '금', '토');
+     var today = new Date();
+     var year = today.getYear();
+     var month = today.getMonth();
+     var date = today.getDate();    
+     var wday = today.getDay();    
+
+     if(year < 2000)  year += 1900;
+    
+     var frstday = new Date(year, month, 1);
+     var frstwday = frstday.getDay();
+    
+     var tblcal = document.createElement('table');
+     tblcal.style.textAlign = 'center';
+     tblcal.setAttribute('id', 'tbl_' + iddiv);
+     tblcal.setAttribute('border', '1');
+     var tbltr = tblcal.insertRow();
+     var tbltd = tbltr.insertCell();
+     tbltd.colSpan = '3';
+     tbltd.innerHTML = year + '년' + (month +1) + '월';
+    
+     tbltr = tblcal.insertRow();
+     tbltd = tbltr.insertCell();
+     tbltd.innerHTML = '';
+
+     tbltd = tbltr.insertCell();
+     var tblcalSub = document.createElement('table');
+     tblcalSub.setAttribute('border', '1');
+     tbltd.appendChild(tblcalSub);
+
+     tbltd = tbltr.insertCell();
+     tbltd.innerHTML = '';
+
+     //날짜테이블 시작
+     tbltr = tblcalSub.insertRow();
+     for(i=0; i<7; i++) {
+      tbltd = tbltr.insertCell();
+      tbltd.innerHTML = arrWeek[i];
+     }
+    
+     for(i=1; i <= getNHLastDay(year, month); i++)  {
+        if(i == 1 || (i+frstwday -1) % 7 == 0)
+           tbltr = tblcalSub.insertRow();
+        if(i == 1)
+           for(j=0; j<frstwday; j++)
+              tbltr.insertCell();
+        tbltd = tbltr.insertCell();
+        tbltd.innerHTML = i;
+        tbltd.onmouseover = function() { this.style.backgroundColor = '#DDDDDD'; };
+        tbltd.onmouseout = function() { this.style.backgroundColor = '#FFFFFF'; };
+        if(i == date)
+          tbltd.style.color = '#FF0000';
+     }
+
+     //날짜테이블 끝
+
+     document.getElementById(iddiv).appendChild(tblcal);
+  }
+
+</script>
+</head>
+<body>
+  <input type='button' value='drawCalendar'  onclick="drawNHCalendar('divtest')" />
+  <div id='divtest'></div>
+</bod>
+</html>
