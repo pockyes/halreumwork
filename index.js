@@ -1,6 +1,4 @@
 let daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-console.log(daysOfWeek);
-
 let Info = {
   name: "areum",
   age: 28,
@@ -9,7 +7,7 @@ let Info = {
   favFood: [
     {
       name: "maratang", 
-      fatty: fals
+      fatty: false
     }, 
     {
       name: "bulgogi Bugger", 
@@ -18,8 +16,9 @@ let Info = {
   ]
 }
 
-console.log(Info.favFood);
 
-Info.age = 27;
+function sayHello(myName, age) {
+ return `Hello! ${myName} How old? ${age}`;
+}
 
-console.log(Info.age);
+sayHello("아름", 28);
