@@ -25,8 +25,17 @@ function handleClick() {
 
 function init() {
   title.style.color = BASE_COLOR;
-  title.addEventListener("click", handleClick);
+  title.addEventListener("mouseover", handleClick);
 }
-
 init();
 
+
+// function handleOffline() {
+//   console.log("인터넷 연결 끊김");
+// }
+
+// function handleOnline() {
+//   console.log("인터넷 연결");
+// }
+// window.addEventListener("offline", handleOffline);
+// window.addEventListener("online", handleOnline);
