@@ -11,11 +11,16 @@
 
 let title = document.querySelector("#title");
 
-let BASE_COLOR = "#000000";
-let OTHER_COLOR = "#81ecec";
+let BASE_COLOR = "rgb(0, 0, 0)";
+let OTHER_COLOR = "#55efc4";
 
 function handleClick() {
-  console.log(title.style.color);
+  let currentColor = title.style.color;
+  if (currentColor === BASE_COLOR) {
+    title.style.color = OTHER_COLOR;
+  } else {
+    title.style.color = BASE_COLOR;
+  }
 }
 
 function init() {
