@@ -14,13 +14,16 @@ function getTime() {
   let minutes = date.getMinutes();
   let hours = date.getHours();
   let seconds = date.getSeconds();
-  clockTitle.innerText = `${hours}:${minutes}:${seconds}`;
+  clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+  
 }
 
-function init() {
-  // title.addEventListener("click", handleClick);
-  getTime();
 
+
+function init() {
+  title.addEventListener("click", handleClick);
+  getTime();
+  setInterval(getTime, 1000);
 }
 init();
 
