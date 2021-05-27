@@ -3,10 +3,15 @@ body {
 }
 
 h1 {
-  color: rgb(0, 0, 0);
+  color: #ff7675;
   text-align: center;
+  transition: color 0.5s ease-in-out;
 }
 
-#title {
+.clicked {
+  color: #00b894;
+}
 
+.btn {
+  cursor: pointer;
 }
