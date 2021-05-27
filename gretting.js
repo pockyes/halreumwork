@@ -5,10 +5,16 @@ let gretting = document.querySelector(".js-grettings");
 let USER_LS = "currentUser";
 let SHOWING_CN = "showing";
 
+
+function saveName(text) {
+  localStorage.setItem(USER_LS, text);
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   let currentValue = input.value;
   paintGretting(currentValue);
+  saveName(currentValue);
 }
 
 function askForName() {
