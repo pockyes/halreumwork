@@ -25,7 +25,7 @@ function askForName() {
 function paintGretting(text) {
   form.classList.remove(SHOWING_CN);
   gretting.classList.add(SHOWING_CN);
-  gretting.innerText = `환영합니다 ${text} 님`;
+  gretting.innerText = `${text} 님의 To Do List`;
 }
 
 function loadName() {
