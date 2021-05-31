@@ -11,12 +11,10 @@ function deleteToDo(event) {
   let li = btn.parentNode;
   toDoList.removeChild(li);
   let cleanToDos = toDos.filter(function(toDo){
-    console.log(toDo.id);
-    console.log(li.id);
-    return parseInt(toDo.id) !== li.id;
+    return toDo.id !== parseInt(li.id);
   });
-  console.log(cleanToDos);
-
+  toDos = cleanToDos;
+  saveToDos();
 }
 
 function saveToDos() {
