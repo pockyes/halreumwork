@@ -7,23 +7,24 @@
   </head>
 
   <body>
-   <h1 id="title" class="btn"></h1>
+   <h3 id="title" class="btn"></h3>
     <div class="js-clock">
-      <h1>00:00:00</h1>
+      <h3>00:00:00</h3>
     </div>
+    <h2 class="days-info">
+      <script src="clock.js"></script>
+      <span class="js-weather"></span>
+    </h2>
     <form class="js-form form">
       <input type="text" placeholder="당신의 이름은?" />
     </form>
     <h4 class="js-grettings grettings"></h4>
-    <form class="js-toDoForm">
-      <input type="text" placeholder="" />
+    <form class="js-toDoForm todo-Form">
+      <input type="text" class="todo-input" placeholder="오늘 해야 할 일" />
     </form>
-    <ul class="js-toDoList">
+    <ul class="js-toDoList todo-input">
       <!-- <li id="1">alalal</li> -->
     </ul>
-
-    <span class="js-weather"></span>
-    <script src="clock.js"></script>
     <script src="gretting.js"></script>
     <script src="todo.js"></script>
     <script src="bg.js"></script>

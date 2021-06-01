@@ -12,7 +12,8 @@ function getWeather(lat, lng) {
     }).then(function(json) {
       let temperature = json.main.temp;
       let place = json.name;
-      weather.innerText = `${temperature} @${place} `;
+      weather.innerText = `현재 기온 : ${temperature}°C 
+      내 위치 : ${place} `;
     })
 
 }

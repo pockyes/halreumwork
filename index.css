@@ -2,9 +2,8 @@ body {
   background-color: #596275;
 }
 
-h1 {
-  color: #ff7675;
-  text-align: center;
+h3 {
+  text-align: right;
   transition: color 0.5s ease-in-out;
 }
 
@@ -44,4 +43,27 @@ h1 {
   height: 100%;
   z-index: -1;
   animation: fadeIn 1.5s linear;
+}
+
+button {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.days-info {
+  text-align: center;
+  color: #00b894;
+}
+
+.todo-Form {
+  margin: auto;
+  width: 50%;
+}
+
+.todo-input {
+  padding: 5px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
 }
