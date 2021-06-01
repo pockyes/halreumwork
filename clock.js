@@ -11,8 +11,15 @@ let clockTitle = clockContainer.querySelector("h3");
 
 function getDay() {
   let d = new Date();
-  let week = new Array('일', '월', '화', '수', '목', '금', '토');
-  document.write('오늘은 ' + week[d.getDay()] + '요일입니다!' + '<br />');
+  let week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var monthNames = 
+  [
+    "January", "February", "March", "April", "May", "June", "July", 
+    "August", "September", "October", "November", "December"
+  ];
+  let day = new String(d.getDate());
+  day = day >= 10 ? day:'0' + day;
+  document.write(week[d.getDay()] + '  ' + monthNames[d.getMonth()] + '  ', day + '<br />' );
 }
 
 function getTime() {
