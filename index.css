@@ -19,6 +19,7 @@ h1 {
 .form,
 .grettings {
   display: none;
+  text-align: center;
 }
 
 .showing {
