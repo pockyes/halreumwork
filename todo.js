@@ -21,15 +21,16 @@ function saveToDos() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }
 
+
 function paintToDo(text) {
   let li = document.createElement("li");
   let delBtn = document.createElement("button");
   let span = document.createElement("span");
   let newId = toDos.length + 1;
 
-
   delBtn.innerText = "X"; 
   delBtn.addEventListener("click", deleteToDo);
+  // delBtn.innerHTML += "<button style='float: right;' class='btn btn-outline-secondary' type='button'>삭제</button>";
   span.innerText = text;
   li.appendChild(span);
   toDoList.appendChild(li);
