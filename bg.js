@@ -1,5 +1,5 @@
 let body = document.querySelector("body");
-let IMG_NUMBER = 3;
+let IMG_NUMBER = 6;
 
 
 function paintImage(imgNumber) {
@@ -7,7 +7,7 @@ function paintImage(imgNumber) {
   image.src = `image/${imgNumber + 1}.jpg`
   image.classList.add('bgImage');
   body.prepend(image);
-  //image.addEventListener("loadend", handImgLoad);
+  image.addEventListener("loadend", handImgLoad);
 
 }
 
